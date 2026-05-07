@@ -1,0 +1,83 @@
+// ============================================
+// 1. BASE COLORS
+// ============================================
+$bg-black: #000000;           // Pure black background
+$bg-black-soft: #0A0A0A;      // Slightly softer black (optional)
+
+// ============================================
+// 2. GLASSMORPHISM (Surface & Cards)
+// ============================================
+$glass-bg: rgba(255, 255, 255, 0.05);
+$glass-blur: blur(12px);
+$glass-border: 1px solid rgba(255, 255, 255, 0.1);
+$glass-border-light: 1px solid rgba(255, 255, 255, 0.2);
+
+// Secondary glass (lighter blur, for outline buttons)
+$glass-secondary-bg: rgba(255, 255, 255, 0.02);
+$glass-secondary-blur: blur(8px);
+$glass-secondary-border: 1px solid rgba(255, 255, 255, 0.25);
+
+// ============================================
+// 3. PRIMARY BUTTON (Solid Neon – pick one)
+// ============================================
+// Option A: Anime-forward (hot pink)
+$primary-anime: #FF2A6D;
+// Option B: Programming-forward (cyan)
+$primary-code: #00F0FF;
+// Option C: Balanced (purple)
+$primary-purple: #B967FF;
+
+// I'll use $primary as a variable you can reassign
+$primary: $primary-anime;  // ← change to $primary-code or $primary-purple as needed
+
+// Primary button hover (darker or brighter)
+$primary-hover: darken($primary, 8%);
+// or use a neon glow effect:
+$primary-glow: 0 0 12px rgba($primary, 0.6);
+
+// ============================================
+// 4. SECONDARY BUTTON (Glass Outline)
+// ============================================
+$secondary-bg: transparent;
+$secondary-border: $glass-secondary-border;
+$secondary-text: rgba(255, 255, 255, 0.9);
+$secondary-hover-bg: rgba(255, 255, 255, 0.08);
+$secondary-hover-border: 1px solid rgba(255, 255, 255, 0.4);
+
+// ============================================
+// 5. TEXT COLORS
+// ============================================
+$text-primary: #FFFFFF;
+$text-secondary: rgba(255, 255, 255, 0.7);
+$text-tertiary: rgba(255, 255, 255, 0.5);
+$text-inverse: #000000;  // For dark badges on light accents
+
+// ============================================
+// 6. ACCENT COLORS (Badges, Alerts, Highlights)
+// ============================================
+$accent-cyan: #00F0FF;
+$accent-yellow: #FFB800;
+$accent-red: #FF3B30;
+$accent-green: #34C759;
+
+// Sale badge
+$sale-badge-bg: $accent-cyan;
+$sale-badge-text: $text-inverse;
+
+// Free shipping banner
+$shipping-banner-bg: $accent-yellow;
+$shipping-banner-text: $text-inverse;
+
+// Error messages
+$error-color: $accent-red;
+$success-color: $accent-green;
+
+// ============================================
+// 7. ADDITIONAL UI ELEMENTS
+// ============================================
+$card-border-radius: 12px;
+$button-border-radius: 40px;      // Pill shape for primary
+$button-border-radius-sm: 8px;    // Subtle rounding for secondary
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;

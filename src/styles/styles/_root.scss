@@ -1,0 +1,50 @@
+// _root.scss
+@use '../config/index.scss' as cfg;
+
+:root {
+    --space-tiny: #{cfg.$space-tiny};
+    --space-xxs: #{cfg.$space-xxs};
+    --space-xs: #{cfg.$space-xs};
+    --space-sm: #{cfg.$space-sm};
+    --space-md: #{cfg.$space-md};
+    --space-lg: #{cfg.$space-lg};
+    --space-xl: #{cfg.$space-xl};
+    --space-xxl: #{cfg.$space-xxl};
+    --space-huge: #{cfg.$space-huge};
+    --space-giant: #{cfg.$space-giant};
+
+    --font-tiny: #{cfg.$font-tiny};
+    --font-xxs: #{cfg.$font-xxs};
+    --font-xs: #{cfg.$font-xs};
+    --font-sm: #{cfg.$font-sm};
+    --font-md: #{cfg.$font-md};
+    --font-lg: #{cfg.$font-lg};
+    --font-xl: #{cfg.$font-xl};
+    --font-xxl: #{cfg.$font-xxl};
+    --font-huge: #{cfg.$font-huge};
+    --font-giant: #{cfg.$font-giant};
+
+    --bg-black: #{cfg.$bg-black};
+    --glass-bg: #{cfg.$glass-bg};
+    --glass-border: #{cfg.$glass-border};
+    --glass-blur: #{cfg.$glass-blur};
+
+    --primary: #{cfg.$primary};
+    --primary-hover: #{cfg.$primary-hover};
+    --primary-glow: #{cfg.$primary-glow};
+
+    --secondary-bg: #{cfg.$secondary-bg};
+    --secondary-border: #{cfg.$secondary-border};
+    --secondary-text: #{cfg.$secondary-text};
+    --secondary-hover-bg: #{cfg.$secondary-hover-bg};
+
+    --text-primary: #{cfg.$text-primary};
+    --text-secondary: #{cfg.$text-secondary};
+    --text-tertiary: #{cfg.$text-tertiary};
+    --text-inverse: #{cfg.$text-inverse};
+
+    --accent-cyan: #{cfg.$accent-cyan};
+    --accent-yellow: #{cfg.$accent-yellow};
+    --accent-red: #{cfg.$accent-red};
+    --accent-green: #{cfg.$accent-green};
+}

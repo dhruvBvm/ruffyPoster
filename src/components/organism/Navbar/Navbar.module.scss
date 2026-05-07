@@ -1,0 +1,21 @@
+@use "./../../../styles/config/index.scss" as *;
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  background-color: var(--bg-black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  
+  &__links {
+    @include flex();
+    gap: var(--space-xl);
+
+  }
+}
