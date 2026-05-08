@@ -1,0 +1,47 @@
+@use "./../../../styles/config/index.scss" as *;
+
+.roundedButton {
+  // padding: var(--space-sm);
+  background-color: var(--glass-bg);
+  font-size: var(--font-md);
+  font-family: "Roboto Mono";
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  // border-radius: 99em;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+  @include flex(row, strech, space-between);
+  // gap: 10px;
+  cursor: pointer;
+  // outline: 1px solid transparent;
+  outline-offset: 3px;
+  outline: none;
+  // border: none;
+  // outline: 1px solid var(--text-secondary);
+
+  &__iconContainer {
+    flex: 1;
+    // border: 1px solid var(--text-secondary);
+    border-right: 1px solid var(--text-secondary);
+    // height: 0%;
+    aspect-ratio: 1/1;
+    // border-radius: 50%;
+    @include flex(row, center, center);
+    position: relative;
+    width: 55px;
+    // border: 3px solid green;
+  }
+  &__textContainer {
+    flex: 1;
+    padding: 0 var(--space-sm);
+    // border-right: 1px solid var(--text-secondary);
+    @include flex(row, center, center);
+    position: relative;
+    // border: 3px solid green;
+  }
+
+  &:hover {
+    outline: 1px solid var(--text-secondary);
+  }
+}

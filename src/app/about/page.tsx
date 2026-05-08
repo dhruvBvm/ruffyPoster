@@ -1,19 +1,14 @@
-import LinkButton from "@/components/molecules/LinkButton/LinkButton";
+"use client";
+import { FaAddressCard } from "react-icons/fa6";
 import styles from "./about.module.scss";
+import RoundedButton from "@/components/organism/RoundedButton/RoundedButton";
+import { BiCartAdd } from "react-icons/bi";
 
-import { FaShoppingCart } from "react-icons/fa";
-
-export default function About() {
+export default function page() {
   return (
     <div className={styles.about}>
-      <button className={styles.button}>
-        <div className={styles.button__icon}>
-          <FaShoppingCart />
-        </div>
-        <div className={styles.button__text}>
-          <LinkButton text={"Add to cart"} />
-        </div>
-      </button>
+      <RoundedButton text={"See All Posters"} icon={FaAddressCard} />
+      <RoundedButton text={"Add To Cart"} icon={BiCartAdd} />
     </div>
   );
 }

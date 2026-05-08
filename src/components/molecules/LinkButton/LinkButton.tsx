@@ -15,12 +15,19 @@ gsap.registerPlugin(SplitText);
 
 interface Props {
   text: string;
-  href?: string;
+  href?: string | null;
   size?: number;
   isLink?: boolean;
+  hoverElement?: HTMLElement | null; // element from parent, not a ref
 }
 
-const LinkButton = ({ text, href, size = 16, isLink = false }: Props) => {
+const LinkButton = ({
+  text,
+  href,
+  size = 16,
+  isLink = false,
+  hoverElement,
+}: Props) => {
   const elementsRef = useRef<HTMLDivElement[]>([]);
   const linkRef = useRef<HTMLAnchorElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
@@ -59,7 +66,13 @@ const LinkButton = ({ text, href, size = 16, isLink = false }: Props) => {
   );
 
   useGSAP(() => {
-    const currentElement = isLink ? linkRef.current : divRef.current;
+
+    let currentElement:
+      | HTMLElement
+      | HTMLDivElement
+      | HTMLAnchorElement
+      | null = isLink ? linkRef.current : divRef.current;
+    if (hoverElement) currentElement = hoverElement;
     if (!currentElement || elementsRef.current.length !== 2) return;
 
     const upperElement = elementsRef.current[0];
@@ -87,7 +100,6 @@ const LinkButton = ({ text, href, size = 16, isLink = false }: Props) => {
         );
       }
     };
-
     const onMouseLeave = () => {
       if (upperSplitRef.current && lowerSplitRef.current) {
         animateMouseLeave(
@@ -107,12 +119,12 @@ const LinkButton = ({ text, href, size = 16, isLink = false }: Props) => {
       upperSplitRef.current?.revert();
       lowerSplitRef.current?.revert();
     };
-  }, [isLink, text]);
+  }, [isLink, text, hoverElement]); // hoverElement triggers re‑run when it becomes available
 
   return (
     <>
       {isLink ? (
-        <Link className={styles.linkButton} href={href} ref={linkRef}>
+        <Link className={styles.linkButton} href={href || "/"} ref={linkRef}>
           {buttonContent}
         </Link>
       ) : (

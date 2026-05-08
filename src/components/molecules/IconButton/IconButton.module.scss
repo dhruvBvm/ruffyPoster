@@ -1,13 +1,14 @@
-.linkButton {
+@use "./../../../styles/config/index.scss" as *;
+
+.icon {
   position: relative;
-  display: inline-block; // shrink‑wrap
+  display: inline-block;
   cursor: pointer;
   overflow: hidden;
-  // border: 1px solid red;
 
   &__placeholder,
-  &__upperText,
-  &__lowerText {
+  &__upperIcon,
+  &__lowerIcon {
     white-space: nowrap;
     font-family: "Roboto Mono";
     font-weight: 300;
@@ -15,21 +16,24 @@
     text-transform: uppercase;
     letter-spacing: -1px;
     font-style: normal;
+    position: relative;
+    @include flex(row, center, center);
   }
 
   &__placeholder {
     visibility: hidden;
   }
 
-  &__upperText,
-  &__lowerText {
+  &__upperIcon,
+  &__lowerIcon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .char{
-        will-change: transform
+    svg {
+      @include flex(row, center, center);
     }
   }
+
 }
