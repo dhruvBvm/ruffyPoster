@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./../styles/index.scss";
 import { Navbar } from "@/components/organism/Navbar/Nabar";
+import NavbarSlider from "@/components/organism/NavbarSlider/NavbarSlider";
+import StoreProvider from "@/store/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Ruffy Poster",
@@ -15,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
+        <StoreProvider> 
+          <NavbarSlider />
+          <Navbar />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );

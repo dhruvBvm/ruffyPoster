@@ -33,9 +33,6 @@ const IconButton = ({ icon: Icon, hoverElement, size = 16 }: props) => {
     const upperElement = elementsRef.current[0];
     const lowerElement = elementsRef.current[1];
 
-    console.log(upperElement);
-    console.log(lowerElement);
-
     if (upperElement && lowerElement) {
       initSplitText(upperElement, lowerElement);
     }

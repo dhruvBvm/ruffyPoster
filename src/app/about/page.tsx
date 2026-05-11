@@ -7,8 +7,8 @@ import { BiCartAdd } from "react-icons/bi";
 export default function page() {
   return (
     <div className={styles.about}>
-      <RoundedButton text={"See All Posters"} icon={FaAddressCard} />
-      <RoundedButton text={"Add To Cart"} icon={BiCartAdd} />
+      {/* <RoundedButton text={"See All Posters"} icon={FaAddressCard} />
+      <RoundedButton text={"Add To Cart"} icon={BiCartAdd} /> */}
     </div>
   );
 }

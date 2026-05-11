@@ -10,11 +10,9 @@
   &__lowerText {
     white-space: nowrap;
     font-family: "Roboto Mono";
-    font-weight: 300;
     font-size: var(--i);
     text-transform: uppercase;
     letter-spacing: -1px;
-    font-style: normal;
   }
 
   &__placeholder {
@@ -27,9 +25,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: var(--font-family, "Roboto Mono");
+    font-weight: var(--font-wight, 300);
+    font-style: var(--font-style, normal);
 
-    .char{
-        will-change: transform
+    .char {
+      will-change: transform;
     }
   }
 }

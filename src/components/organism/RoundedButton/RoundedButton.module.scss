@@ -9,7 +9,7 @@
   font-style: normal;
   display: flex;
   // border-radius: 99em;
-  border: 1px solid var(--text-secondary);
+  border: 1px solid var(--border);
   color: var(--text-primary);
   @include flex(row, strech, space-between);
   // gap: 10px;
@@ -18,12 +18,12 @@
   outline-offset: 3px;
   outline: none;
   // border: none;
-  // outline: 1px solid var(--text-secondary);
+  // outline: 1px solid var(--border);
 
   &__iconContainer {
     flex: 1;
-    // border: 1px solid var(--text-secondary);
-    border-right: 1px solid var(--text-secondary);
+    // border: 1px solid var(--border);
+    border-right: 1px solid var(--border);
     // height: 0%;
     aspect-ratio: 1/1;
     // border-radius: 50%;
@@ -35,13 +35,13 @@
   &__textContainer {
     flex: 1;
     padding: 0 var(--space-sm);
-    // border-right: 1px solid var(--text-secondary);
+    // border-right: 1px solid var(--border);
     @include flex(row, center, center);
     position: relative;
     // border: 3px solid green;
   }
 
   &:hover {
-    outline: 1px solid var(--text-secondary);
+    outline: 1px solid var(--border);
   }
 }

@@ -18,7 +18,13 @@ interface Props {
   href?: string | null;
   size?: number;
   isLink?: boolean;
-  hoverElement?: HTMLElement | null; // element from parent, not a ref
+  hoverElement?: HTMLElement | null;
+  fontFamilyUpper?: string;
+  fontFamilyLower?: string;
+  fontWight?: number;
+  fontStyleUpper?: "normal" | "italic";
+  fontStyleLower?: "normal" | "italic";
+  lineHight?: number;
 }
 
 const LinkButton = ({
@@ -27,6 +33,11 @@ const LinkButton = ({
   size = 16,
   isLink = false,
   hoverElement,
+  fontFamilyUpper = "Roboto Mono",
+  fontFamilyLower = "Roboto Mono",
+  fontWight = 300,
+  fontStyleUpper = "normal",
+  fontStyleLower = "normal",
 }: Props) => {
   const elementsRef = useRef<HTMLDivElement[]>([]);
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -51,14 +62,28 @@ const LinkButton = ({
       <div
         className={styles.linkButton__upperText}
         ref={addToRef}
-        style={{ "--i": `${size}px` } as React.CSSProperties}
+        style={
+          {
+            "--i": `${size}px`,
+            "--font-family": fontFamilyUpper,
+            "--font-wight": fontWight,
+            "--font-style": fontStyleUpper,
+          } as React.CSSProperties
+        }
       >
         {text}
       </div>
       <div
         className={styles.linkButton__lowerText}
         ref={addToRef}
-        style={{ "--i": `${size}px` } as React.CSSProperties}
+        style={
+          {
+            "--i": `${size}px`,
+            "--font-family": fontFamilyLower,
+            "--font-wight": fontWight,
+            "--font-style": fontStyleLower,
+          } as React.CSSProperties
+        }
       >
         {text}
       </div>
@@ -66,7 +91,6 @@ const LinkButton = ({
   );
 
   useGSAP(() => {
-
     let currentElement:
       | HTMLElement
       | HTMLDivElement
